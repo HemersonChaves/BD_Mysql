@@ -1,0 +1,9 @@
+USE cliente
+
+CREATE TABLE tb_pessoa(
+id INT NOT NULL, 
+nome VARCHAR(200) NOT NULL,
+cpf VARCHAR(11) NOT NULL,
+dt_nascimento DATE NOT NULL,
+sexo CHAR(1),
+PRIMARY KEY(id));
