@@ -1,0 +1,5 @@
+USE cliente;
+
+ALTER TABLE tb_contato
+ADD FOREIGN KEY(id_pessoa)
+REFERENCES tb_pessoa(id);
