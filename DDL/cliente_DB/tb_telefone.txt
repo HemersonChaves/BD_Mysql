@@ -1,6 +1,9 @@
-USE cliente;
+USE cliente_db;
 
 CREATE TABLE tb_telefone(
-id INT NOT NULL AUTO_INCREMENT,
-telefone VARCHAR(11) NOT NULL,
-PRIMARY KEY(id));
+  id INT NOT NULL AUTO_INCREMENT,
+  telefone VARCHAR(11) NOT NULL,
+  dt_criacao DATETIME NOT NULL,
+  idcontato INT NOT NULL,
+  PRIMARY KEY(id)
+);
