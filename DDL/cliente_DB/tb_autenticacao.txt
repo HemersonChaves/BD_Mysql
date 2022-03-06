@@ -1,9 +1,10 @@
-USE cliente;
+USE cliente_db;
 
 CREATE TABLE tb_autenticacao(
-  id INT NOT NULL AUTO_INCREMENT;
-  login VARCHAR(200) NOT NULL;
-  senha VARCHAR(200) NOT NULL;
-  dt_criacao DATETIME NOT NULL;
+  id INT NOT NULL AUTO_INCREMENT,
+  login VARCHAR(200) NOT NULL,
+  senha VARCHAR(200) NOT NULL,
+  dt_criacao DATETIME NOT NULL,
+  idpessoa INT NOT NULL,
   PRIMARY KEY(id)
-  );
+);
