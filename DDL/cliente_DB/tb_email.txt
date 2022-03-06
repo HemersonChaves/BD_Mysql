@@ -1,0 +1,8 @@
+USE cliente;
+
+CREATE TABLE tb_email(
+  id INT NOT NULL AUTO_INCREMENT;
+  email VARCHAR(150) NOT NULL,
+  dt_criacao DATETIME,
+  PRIMARY KEY(id)
+  );
