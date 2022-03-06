@@ -1,0 +1,4 @@
+USE cliente_db;
+
+ALTER TABLE tb_autenticacao ADD CONSTRAINT id_fk_pessoa_autentication
+FOREIGN KEY (idpessoa) REFERENCES tb_pessoa(id);
