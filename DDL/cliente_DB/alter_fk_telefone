@@ -1,0 +1,4 @@
+USE cliente_db;
+
+ALTER TABLE tb_telefone ADD CONSTRAINT id_fk_telefone
+FOREIGN KEY(idcontato) REFERENCES tb_contato(id);
