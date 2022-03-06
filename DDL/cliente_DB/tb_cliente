@@ -1,0 +1,6 @@
+USE cliente;
+
+CREATE TABLE tb_cliente(
+  id INT NOT NULL AUTO_INCREMENT;
+  PRIMARY KEY(id)
+ );
