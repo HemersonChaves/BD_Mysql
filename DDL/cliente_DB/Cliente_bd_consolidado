@@ -1,0 +1,66 @@
+CREATE DATABASE cliente_bd;
+
+USE cliente_bd;
+
+CREATE TABLE tb_pessoa(
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(200) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
+  dt_nascimento DATE NOT NULL,
+  sexo CHAR(1),
+  dt_criacao DATETIME NOT NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE tb_contato(
+  id INT NOT NULL AUTO_INCREMENT,
+  idpessoa INT NOT NULL,
+  PRIMARY KEY(ID)
+);
+
+CREATE TABLE tb_telefone(
+  id INT NOT NULL AUTO_INCREMENT,
+  telefone VARCHAR(11) NOT NULL,
+  dt_criacao DATETIME NOT NULL,
+  idcontato INT NOT NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE tb_email(
+  id INT NOT NULL AUTO_INCREMENT,
+  email VARCHAR(150) NOT NULL,
+  dt_criacao DATETIME,
+  idcontato INT NOT NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE tb_autenticacao(
+  id INT NOT NULL AUTO_INCREMENT,
+  login VARCHAR(200) NOT NULL,
+  senha VARCHAR(200) NOT NULL,
+  dt_criacao DATETIME NOT NULL,
+  idpessoa INT NOT NULL,
+  PRIMARY KEY(id)
+);
+
+
+CREATE TABLE tb_cliente(
+  id INT NOT NULL AUTO_INCREMENT,
+  idpessoa INT NOT NULL,
+  PRIMARY KEY(id)
+);
+
+ALTER TABLE tb_contato ADD CONSTRAINT id_fk_pessoa
+FOREIGN KEY(idpessoa) REFERENCES tb_pessoa(id);
+
+ALTER TABLE tb_telefone ADD CONSTRAINT id_fk_telefone
+FOREIGN KEY(idcontato) REFERENCES tb_contato(id);
+
+ALTER TABLE tb_email ADD CONSTRAINT id_fk_contato
+FOREIGN KEY (idcontato) REFERENCES tb_contato(id);
+
+ALTER TABLE tb_autenticacao ADD CONSTRAINT id_fk_pessoa_autentication
+FOREIGN KEY (idpessoa) REFERENCES tb_pessoa(id);
+
+ALTER TABLE tb_cliente ADD CONSTRAINT id_fk_pessoa_cliente
+FOREIGN KEY (idpessoa) REFERENCES tb_pessoa(id);
