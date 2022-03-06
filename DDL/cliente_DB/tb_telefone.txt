@@ -1,0 +1,6 @@
+USE cliente;
+
+CREATE TABLE tb_telefone(
+id INT NOT NULL AUTO_INCREMENT,
+telefone VARCHAR(11) NOT NULL,
+PRIMARY KEY(id));
