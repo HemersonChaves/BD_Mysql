@@ -1,5 +1,4 @@
-USE cliente;
+USE cliente_db;
 
-ALTER TABLE tb_contato
-ADD FOREIGN KEY(id_pessoa)
-REFERENCES tb_pessoa(id);
+ALTER TABLE tb_contato ADD CONSTRAINT id_fk_pessoa
+FOREIGN KEY(idpessoa) REFERENCES tb_pessoa(id);
