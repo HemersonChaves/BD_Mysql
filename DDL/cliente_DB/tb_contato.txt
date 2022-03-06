@@ -1,6 +1,7 @@
-USE cliente
+USE cliente_db;
 
 CREATE TABLE tb_contato(
-  id INT NOT NULL AUTO_INCREMENT
-  PRIMARY KEY(id)
+  id INT NOT NULL AUTO_INCREMENT,
+  idpessoa INT NOT NULL,
+  PRIMARY KEY(ID)
 );
