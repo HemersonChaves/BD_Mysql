@@ -1,6 +1,6 @@
-CREATE DATABASE cliente_bd;
+CREATE DATABASE cliente;
 
-USE cliente_bd;
+USE cliente;
 
 CREATE TABLE tb_pessoa(
   id INT NOT NULL AUTO_INCREMENT,
@@ -8,7 +8,7 @@ CREATE TABLE tb_pessoa(
   cpf VARCHAR(11) NOT NULL,
   dt_nascimento DATE NOT NULL,
   sexo CHAR(1),
-  dt_criacao DATETIME NOT NULL,
+  dt_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY(id)
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE tb_contato(
 CREATE TABLE tb_telefone(
   id INT NOT NULL AUTO_INCREMENT,
   telefone VARCHAR(11) NOT NULL,
-  dt_criacao DATETIME NOT NULL,
+  dt_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
   idcontato INT NOT NULL,
   PRIMARY KEY(id)
 );
@@ -29,7 +29,7 @@ CREATE TABLE tb_telefone(
 CREATE TABLE tb_email(
   id INT NOT NULL AUTO_INCREMENT,
   email VARCHAR(150) NOT NULL,
-  dt_criacao DATETIME,
+  dt_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
   idcontato INT NOT NULL,
   PRIMARY KEY(id)
 );
@@ -38,7 +38,7 @@ CREATE TABLE tb_autenticacao(
   id INT NOT NULL AUTO_INCREMENT,
   login VARCHAR(200) NOT NULL,
   senha VARCHAR(200) NOT NULL,
-  dt_criacao DATETIME NOT NULL,
+  dt_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
   idpessoa INT NOT NULL,
   PRIMARY KEY(id)
 );
@@ -47,6 +47,7 @@ CREATE TABLE tb_autenticacao(
 CREATE TABLE tb_cliente(
   id INT NOT NULL AUTO_INCREMENT,
   idpessoa INT NOT NULL,
+  dt_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY(id)
 );
 
@@ -64,3 +65,6 @@ FOREIGN KEY (idpessoa) REFERENCES tb_pessoa(id);
 
 ALTER TABLE tb_cliente ADD CONSTRAINT id_fk_pessoa_cliente
 FOREIGN KEY (idpessoa) REFERENCES tb_pessoa(id);
+
+
+
