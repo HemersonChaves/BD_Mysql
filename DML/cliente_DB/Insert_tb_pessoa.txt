@@ -1,0 +1,12 @@
+USE cliente;
+
+INSERT INTO tb_pessoa(
+  nome, 
+  cpf, 
+  dt_nascimento, 
+  sexo)
+VALUES(
+  'hemerson',
+  '1234567890',
+  '01-01-2022',
+  'M');
